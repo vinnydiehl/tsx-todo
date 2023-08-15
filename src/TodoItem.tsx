@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ChangeEvent, ReactElement } from "react";
 import { Todo } from "./types";
 
 interface TodoItemProps {
@@ -31,7 +31,7 @@ export function TodoItem({ completed, id, title, setTodos }: TodoItemProps): Rea
         <input
           type="checkbox"
           checked={completed}
-          onChange={(e) => toggleTodo(id, e.target.checked)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => toggleTodo(id, e.target.checked)}
         />
         <span className="custom-checkbox"></span>
         <span className="title">{title}</span>
